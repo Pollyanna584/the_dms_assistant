@@ -1,0 +1,38 @@
+Name,Price,Rarity,Damage,Weight,Properties
+Club,1 sp,All,1d4 Bludgeon,2 lb.,Light
+Dagger,2 gp,All,1d4 Piercing,1 lb.,"Finesse, Light, Thrown (20/60)"
+Greatclub,2 sp,All,1d8 Bludgeon,10 lb.,Two-handed
+Handaxe,5 gp,All,1d6 Slashing,2 lb.,"Light, Thrown (20/60)"
+Javelin,5 sp,All,1d6 Piercing,2 lb.,Thrown (30/120)
+Light hammer,2 gp,All,1d4 Bludgeon,2 lb.,"Light, Thrown (20/60)"
+Mace,5 gp,All,1d6 Bludgeon,5 lb.,-
+Quarterstaff,2 sp,All,1d6 Bludgeon,5 lb.,Versatile (1d8)
+Sickle,1 gp,All,1d4 Slashing,2 lb.,Light
+Spear,1 gp,All,1d6 Piercing,3 lb.,"Thrown (20/60), Versatile (1d8)"
+"Crossbow, light",25 gp,All,1d6 Piercing,5 lb.,"Ammunition (80/320), Loading, Two-handed"
+Dart,5 cp,All,1d4 Piercing,.25 lb.,"Finesse, Thrown (20/60)"
+Shortbow,25 gp,All,1d6 Piercing,2 lb.,"Ammunition (80/320), Two-handed"
+Sling,1 sp,All,1d4 Bludgeon,-,Ammunition (30/120)
+Battleaxe,10 gp,All,1d8 Slashing,4 lb.,Versatile (1d10)
+Flail,10 gp,All,1d8 Bludgeon,2 lb.,-
+Glaive,20 gp,All,1d10 Slashing,6 lb.,"Heavy, Reach, Two-handed"
+Greataxe,30 gp,All,1d12 Slashing,7 lb.,"Heavy, Two-handed"
+Greatsword,50 gp,All,2d6 Slashing,6 lb.,"Heavy, Two-handed"
+Halberd,20 gp,All,1d10 Slashing,6 lb.,"Heavy, Reach, Two-handed"
+Lance,10 gp,All,1d12 Piercing,6 lb.,"Reach, Special"
+Longsword,15 gp,All,1d8 Slashing,3 lb.,Versatile (1d10)
+Maul,10 gp,All,2d6 Bludgeon,10 lb.,"Heavy, Two-handed"
+Morningstar,15 gp,All,1d8 Piercing,4 lb.,-
+Pike,5 gp,All,1d10 Piercing,18 lb.,"Heavy, Reach, Two-handed"
+Rapier,25 gp,All,1d8 Piercing,2 lb.,Finesse
+Scimitar,25 gp,All,1d6 Slashing,3 lb.,"Finesse, Light"
+Shortsword,10 gp,All,1d6 Slashing,2 lb.,"Finesse, Light"
+Trident,5 gp,All,1d6 Piercing,5 lb.,"Thrown (20/60), Versatile (1d8)"
+War pick,5 gp,All,1d8 Piercing,2 lb.,-
+Warhammer,15 gp,All,1d8 Bludgeon,2 lb.,Versatile (1d10)
+Whip,2 gp,All,1d4 Slashing,3 lb.,"Finesse, Reach"
+Blowgun,10 gp,All,1 Piercing,1 lb.,"Ammunition (25/100), Loading"
+"Crossbow, hand",75 gp,All,1d6 Piercing,3 lb.,"Ammunition (30/120), Loading, Light"
+"Crossbow, heavy",50 gp,All,1d10 Piercing,18 lb.,"Ammunition (100/400), Loading, Two-handed, Heavy"
+Longbow,50 gp,All,1d8 Piercing,2 lb.,"Ammunition (150/600), Heavy, Two-handed"
+Net,1 gp,All,-,3 lb.,"Special, Thrown (5/15)"
