@@ -24,7 +24,21 @@ def rollItems(item_count, shop_count, row):
     shop_array=range(0,item_count)
     shop_inventory=rd.sample(shop_array,shop_count)
 
-magic_choice = input("Choose an option:\n1 - lots of items\n2 - normal amount\n3 - few items\n") 
+shop_type = input("What type of shop is this?\n1 - General\n2 - General + Magic")
+basic_shop = input("Does the shop have all general items?\n1 for yes or 2 for no")
+volume_choice = input("Choose an option:\n1 - lots of items\n2 - normal amount\n3 - few items\n")
+
+global combat_percent
+
+if volume_choice == 1:
+    combat_percent=.1
+elif volume_choice == 2:
+    combat_percent=.05
+elif volume_choice == 3:
+    combat_percent=.03
+else:
+    print("nope")
+    exit
 
 ## Combat Items
 m_combat_count = len(m_combat)
