@@ -23,10 +23,12 @@ def rollItems(item_count, shop_count, row):
     global shop_inventory
     shop_array=range(0,item_count)
     shop_inventory=rd.sample(shop_array,shop_count)
-    
+
+magic_choice = input("Choose an option:\n1 - lots of items\n2 - normal amount\n3 - few items\n") 
+
 ## Combat Items
 m_combat_count = len(m_combat)
-m_combat_shop_count = round(m_combat_count*.03)
+m_combat_shop_count = round(m_combat_count*combat_percent)
 newrow=0
 rollItems(m_combat_count, m_combat_shop_count, newrow)
 m_combat_inventory = shop_inventory
