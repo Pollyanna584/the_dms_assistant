@@ -1,101 +1,101 @@
-Name,Price,Rarity
-Spell Scroll Level 0,25 gp,Common
-Spell Scroll Level 1,35 gp,Common
-Spell Scroll Level 2,280 gp,Uncommon
-Spell Scroll Level 3,570 gp,Uncommon
-Spell Scroll Level 4,"2,640 gp",Rare
-Spell Scroll Level 5,"5,280 gp",Rare
-Spell Scroll Level 6,"15,560 gp",Very Rare
-Spell Scroll Level 7,"26,220 gp",Very Rare
-Spell Scroll Level 8,"52,240 gp",Very Rare
-Spell Scroll Level 9,"253,360 gp",Legendary
-Scroll of Protection,200 gp,Rare
-Nolzur's Marvelous Pigments,200 gp,Very Rare
-Ammunition +1 (Per),15 gp,Uncommon
-Ammunition +2 (Per),50 gp,Rare
-Ammunition +3 (Per),250 gp,Very Rare
-Keoghtom's Ointment (1 Dose),150 gp,Uncommon
-Quaal's Feather Token Anchor,50 gp,Rare
-Quaal's Feather Token Fan,120 gp,Rare
-Quaal's Feather Token Whip,100 gp,Rare
-Quaal's Feather Token Bird,"1,000 gp",Rare
-Quaal's Feather Token Swan Boat,300 gp,Rare
-Quaal's Feather Token Tree,200 gp,Rare
-Deck of Illusions,900 gp,Uncommon
-Dust of Disappearance,300 gp,Uncommon
-Universal Solvent,300 gp,Legendary
-Dust of Dryness(Per Pinch),100 gp,Uncommon
-Sovereign Glue,400 gp,Legendary
-Horn of Blasting,450 gp,Rare
-Dust of Sneezing and Choking,400 gp,Uncommon
-Arrow of Slaying,400 gp,Very Rare
-Bead of Force,"1,000 gp",Rare
-Elemental Gem,600 gp,Uncommon
-Necklace of Fireballs (1 bead),300 gp,Rare
-Necklace of Fireballs (2 beads),500 gp,Rare
-Necklace of Fireballs (3 beads),"1,000 gp",Rare
-Necklace of Fireballs (4 beads),"1,600 gp",Rare
-Necklace of Fireballs (5 beads),"4,000 gp",Rare
-Necklace of Fireballs (6 beads),"8,000 gp",Rare
-Chime of Opening,400 gp,Rare
-Ioun Stone Absorption,"2,400 gp",Very Rare
-Ioun Stone Greater Absorption,"30,000 gp",Legendary
-Gem of Brightness,350 gp,Uncommon
-Rod of Absorption,"35,000 gp",Very Rare
-Talisman of Ultimate Evil,"62,000 gp",Legendary
-Talisman of Pure Good,"72,000 gp",Legendary
-Robe of Useful Items,300 gp,Uncommon
-Manual of Bodily Health,"55,000 gp",Very Rare
-Manual of Gainful Exercise,"55,000 gp",Very Rare
-Manual of Quickness of Action,"55,000 gp",Very Rare
-Manual of Sharpened Mind,"55,000 gp",Very Rare
-Manual of Glamour and Prestige,"55,000 gp",Very Rare
-Manual of Prudent Foresight,"55,000 gp",Very Rare
-Potion of Healing,50 gp,Common
-Potion of Greater Healing,150 gp,Uncommon
-Potion of Superior Healing,450 gp,Rare
-Potion of Supreme Healing,"1,350 gp",Very Rare
-Elixir of Health,120 gp,Rare
-Potion of Poison,100 gp,Uncommon
-Philter of Love,90 gp,Uncommon
-Potion of Fire Breath,150 gp,Uncommon
-Potion of Climbing,180 gp,Common
-Potion of Heroism,180 gp,Rare
-Potion of Invisibility,180 gp,Very Rare
-Potion of Mind Reading,180 gp,Rare
-Potion of Water Breathing,180 gp,Uncommon
-Potion of Animal Friendship,200 gp,Uncommon
-Potion of Diminution,270 gp,Rare
-Potion of Growth,270 gp,Uncommon
-Potion of Gaseous Form,300 gp,Rare
-Potion of Resistance,300 gp,Uncommon
-Potion of Speed,400 gp,Very Rare
-Potion of Flying,500 gp,Very Rare
-Potion of Clairvoyance,960 gp,Rare
-Potion of Vitality,960 gp,Very Rare
-Potion of Invulnerability,"3,840 gp",Very Rare
-Oil of Etherealness,"1,920 gp",Rare
-Oil of Sharpness,"3,200 gp",Very Rare
-Oil of Slipperiness,480 gp,Uncommon
-Potion of Longevity,"9,000 gp",Very Rare
-Potion of Hill Giant Strength,400 gp,Uncommon
-Potion of Frost Giant Strength,750 gp,Rare
-Potion of Fire Giant Strength,"1,300 gp",Rare
-Potion of Cloud Giant Strength,"1,990 gp",Very Rare
-Potion of Storm Giant Strength,"3,000 gp",Legendary
-Assassin's blood,150 gp,Common
-Truth serum,150 gp,Common
-Carrion crawler mucus,200 gp,Uncommon
-Drow poison,200 gp,Uncommon
-Serpent venom,200 gp,Uncommon
-Malice,250 gp,Rare
-Pale tincture,250 gp,Rare
-Essence of ether,300 gp,Rare
-Oil of taggit,400 gp,Rare
-Burnt othur fumes,500 gp,Rare
-Torpor,600 gp,Very Rare
-Wyvern poison,"1,200 gp",Very Rare
-Midnight tears,"1,500 gp",Legendary
-Purple worm poison,"2,000 gp",Legendary
-Antitoxin,50 gp,Common
-Basic Poison,100 gp,Common
+Name,Price,RarityRare
+Spell Scroll Level 0,25,Common
+Spell Scroll Level 1,35,Common
+Spell Scroll Level 2,280,Uncommon
+Spell Scroll Level 3,570,Uncommon
+Spell Scroll Level 4,2640,Rare
+Spell Scroll Level 5,5280,Rare
+Spell Scroll Level 6,15560,Very Rare
+Spell Scroll Level 7,26220,Very Rare
+Spell Scroll Level 8,52240,Very Rare
+Spell Scroll Level 9,253360,Legendary
+Scroll of Protection,200,Rare
+Nolzur's Marvelous Pigments,200,Very Rare
+Ammunition +1 (Per),15,Uncommon
+Ammunition +2 (Per),50,Rare
+Ammunition +3 (Per),250,Very Rare
+Keoghtom's Ointment (1 Dose),150,Uncommon
+Quaal's Feather Token Anchor,50,Rare
+Quaal's Feather Token Fan,120,Rare
+Quaal's Feather Token Whip,100,Rare
+Quaal's Feather Token Bird,1000,Rare
+Quaal's Feather Token Swan Boat,300,Rare
+Quaal's Feather Token Tree,200,Rare
+Deck of Illusions,900,Uncommon
+Dust of Disappearance,300,Uncommon
+Universal Solvent,300,Legendary
+Dust of Dryness(Per Pinch),100,Uncommon
+Sovereign Glue,400,Legendary
+Horn of Blasting,450,Rare
+Dust of Sneezing and Choking,400,Uncommon
+Arrow of Slaying,400,Very Rare
+Bead of Force,1000,Rare
+Elemental Gem,600,Uncommon
+Necklace of Fireballs (1 bead),300,Rare
+Necklace of Fireballs (2 beads),500,Rare
+Necklace of Fireballs (3 beads),1000,Rare
+Necklace of Fireballs (4 beads),1600,Rare
+Necklace of Fireballs (5 beads),4000,Rare
+Necklace of Fireballs (6 beads),8000,Rare
+Chime of Opening,400,Rare
+Ioun Stone Absorption,2400,Very Rare
+Ioun Stone Greater Absorption,30000,Legendary
+Gem of Brightness,350,Uncommon
+Rod of Absorption,35000,Very Rare
+Talisman of Ultimate Evil,62000,Legendary
+Talisman of Pure Good,72000,Legendary
+Robe of Useful Items,300,Uncommon
+Manual of Bodily Health,55000,Very Rare
+Manual of Gainful Exercise,55000,Very Rare
+Manual of Quickness of Action,55000,Very Rare
+Manual of Sharpened Mind,55000,Very Rare
+Manual of Glamour and Prestige,55000,Very Rare
+Manual of Prudent Foresight,55000,Very Rare
+Potion of Healing,50,Common
+Potion of Greater Healing,150,Uncommon
+Potion of Superior Healing,450,Rare
+Potion of Supreme Healing,1350,Very Rare
+Elixir of Health,120,Rare
+Potion of Poison,100,Uncommon
+Philter of Love,90,Uncommon
+Potion of Fire Breath,150,Uncommon
+Potion of Climbing,180,Common
+Potion of Heroism,180,Rare
+Potion of Invisibility,180,Very Rare
+Potion of Mind Reading,180,Rare
+Potion of Water Breathing,180,Uncommon
+Potion of Animal Friendship,200,Uncommon
+Potion of Diminution,270,Rare
+Potion of Growth,270,Uncommon
+Potion of Gaseous Form,300,Rare
+Potion of Resistance,300,Uncommon
+Potion of Speed,400,Very Rare
+Potion of Flying,500,Very Rare
+Potion of Clairvoyance,960,Rare
+Potion of Vitality,960,Very Rare
+Potion of Invulnerability,3840,Very Rare
+Oil of Etherealness,1920,Rare
+Oil of Sharpness,3200,Very Rare
+Oil of Slipperiness,480,Uncommon
+Potion of Longevity,9000,Very Rare
+Potion of Hill Giant Strength,400,Uncommon
+Potion of Frost Giant Strength,750,Rare
+Potion of Fire Giant Strength,1300,Rare
+Potion of Cloud Giant Strength,1990,Very Rare
+Potion of Storm Giant Strength,3000,Legendary
+Assassin's blood,150,Common
+Truth serum,150,Common
+Carrion crawler mucus,200,Uncommon
+Drow poison,200,Uncommon
+Serpent venom,200,Uncommon
+Malice,250,Rare
+Pale tincture,250,Rare
+Essence of ether,300,Rare
+Oil of taggit,400,Rare
+Burnt othur fumes,500,Rare
+Torpor,600,Very Rare
+Wyvern poison,1200,Very Rare
+Midnight tears,1500,Legendary
+Purple worm poison,2000,Legendary
+Antitoxin,50,Common
+Basic Poison,100,Common

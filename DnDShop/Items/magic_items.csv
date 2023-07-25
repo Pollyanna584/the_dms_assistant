@@ -1,153 +1,153 @@
 Name,Price,Rarity
-(+1) Weapon,700 gp,Uncommon
-(+2) Weapon,"2,000 gp",Rare
-(+3) Weapon,"8,000 gp",Very Rare
-(+1) Armor,"1,000 gp",Rare
-(+2) Armor,"5,000 gp",Very Rare
-(+3) Armor,"30,000 gp",Legendary
-(+1) Shield,500 gp,Uncommon
-(+2) Shield,"2,000 gp",Rare
-(+3) Shield,"20,000 gp",Legendary
-Vicious Weapon,"1,000 gp",Rare
-Sword of Life-Stealing,"1,000 gp",Rare
-Sword of Sharpness,"1,200 gp",Rare
-Scimitar of Speed,"5,000 gp",Very Rare
-Dancing Sword,"5,000 gp",Very Rare
-Sword of Wounding,"2,000 gp",Rare
-Flame Tongue,"3,000 gp",Rare
-Defender,"20,000 gp",Legendary
-Frost Brand,"2,000 gp",Very Rare
-Nine Lives Stealer (Fully Charged),"7,000 gp",Very Rare
-Sunblade,"5,000 gp",Rare
-Dwarven Thrower,"6,000 gp",Very Rare
-Hammer of Thunderbolts,"8,000 gp",Legendary
-Holy Avenger,"90,000 gp",Legendary
-Sword of Answering,"30,000 gp",Legendary
-Efreeti Chain,"50,000 gp",Legendary
-Javelin of Lightning,150 gp,Uncommon
-Dagger of Venom,800 gp,Rare
-Vorpal Sword,"20,000 gp",Legendary
-Weapon of Warning,400 gp,Uncommon
-Dragon Slayer,"2,000 gp",Rare
-Oathbow,"4,500 gp",Very Rare
-Giant Slayer,"1,200 gp",Rare
-Mace of Smiting,"1,500 gp",Rare
-Mace of Disruption,"3,000 gp",Rare
-Mace of Terror,"2,000 gp",Rare
-Ioun Stone Protection,"1,200 gp",Rare
-Ioun Stone Reserve,"1,0500 gp",Rare
-Ioun Stone Agility,"3,000 gp",Very Rare
-Ioun Stone Fortitude,"3,000 gp",Very Rare
-Ioun Stone Insight,"3,000 gp",Very Rare
-Ioun Stone Intellect,"3,000 gp",Very Rare
-Ioun Stone Leadership,"3,000 gp",Very Rare
-Ioun Stone Strength,"3,000 gp",Very Rare
-Ioun Stone Regeneration,"5,000 gp",Legendary
-Ioun Stone Awareness,500 gp,Rare
-Ioun Stone Mastery,"8,000 gp",Legendary
-Staff of Withering,800 gp,Rare
-Staff of Thunder and Lightning,"4,500 gp",Very Rare
-Staff of the Adder,200 gp,Uncommon
-Staff of Striking,"10,000 gp",Very Rare
-Staff of Fire,"15,000 gp",Very Rare
-Staff of Swarming Insects,"2,000 gp",Rare
-Staff of Charming,550 gp,Rare
-Staff of Healing,"3,000 gp",Rare
-Staff of Frost,"20,000 gp",Very Rare
-Staff of Power,"60,500 gp",Very Rare
-Staff of the Woodlands,"2,000 gp",Rare
-Wand of Enemy Detection,"3,000 gp",Rare
-Wand of Magic Missiles,"1,500 gp",Uncommon
-Wand of Web,"2,000 gp",Uncommon
-Wand of Binding,"4,500 gp",Rare
-Wand of Fear,"2,000 gp",Rare
-Wand of Paralysis,"5,000 gp",Rare
-Wand of Fireballs,"5,000 gp",Rare
-Wand of Lightning Bolts,"3,500 gp",Rare
-Wand of Polymorph,"20,000 gp",Very Rare
-Wand of the War Mage +1,700 gp,Uncommon
-Wand of the War Mage +2,"2,000 gp",Rare
-Wand of the War Mage +3,"8,000 gp",Very Rare
-Tentacle Rod,"2,0500 gp",Rare
-Rod of Lordly Might,"15,000 gp",Legendary
-Rod of Alertness,"5,000 gp",Very Rare
-Rod of the Pact Keeper +1,900 gp,Uncommon
-Rod of the Pact Keeper +2,"3,500 gp",Rare
-Rod of the Pact Keeper +3,"11,000 gp",Very Rare
-Rod of Security,"20,000 gp",Very Rare
+(+1) Weapon,700,Uncommon
+(+2) Weapon,2000,Rare
+(+3) Weapon,8000,Very Rare
+(+1) Armor,1000,Rare
+(+2) Armor,5000,Very Rare
+(+3) Armor,30000,Legendary
+(+1) Shield,500,Uncommon
+(+2) Shield,2000,Rare
+(+3) Shield,20000,Legendary
+Vicious Weapon,1000,Rare
+Sword of Life-Stealing,1000,Rare
+Sword of Sharpness,1200,Rare
+Scimitar of Speed,5000,Very Rare
+Dancing Sword,5000,Very Rare
+Sword of Wounding,2000,Rare
+Flame Tongue,3000,Rare
+Defender,20000,Legendary
+Frost Brand,2000,Very Rare
+Nine Lives Stealer (Fully Charged),7000,Very Rare
+Sunblade,5000,Rare
+Dwarven Thrower,6000,Very Rare
+Hammer of Thunderbolts,8000,Legendary
+Holy Avenger,90000,Legendary
+Sword of Answering,30000,Legendary
+Efreeti Chain,50000,Legendary
+Javelin of Lightning,150,Uncommon
+Dagger of Venom,800,Rare
+Vorpal Sword,20000,Legendary
+Weapon of Warning,400,Uncommon
+Dragon Slayer,2000,Rare
+Oathbow,4500,Very Rare
+Giant Slayer,1200,Rare
+Mace of Smiting,1500,Rare
+Mace of Disruption,3000,Rare
+Mace of Terror,2000,Rare
+Ioun Stone Protection,1200,Rare
+Ioun Stone Reserve,10500,Rare
+Ioun Stone Agility,3000,Very Rare
+Ioun Stone Fortitude,3000,Very Rare
+Ioun Stone Insight,3000,Very Rare
+Ioun Stone Intellect,3000,Very Rare
+Ioun Stone Leadership,3000,Very Rare
+Ioun Stone Strength,3000,Very Rare
+Ioun Stone Regeneration,5000,Legendary
+Ioun Stone Awareness,500,Rare
+Ioun Stone Mastery,8000,Legendary
+Staff of Withering,3000,Rare
+Staff of Thunder and Lightning,4500,Very Rare
+Staff of the Adder,200,Uncommon
+Staff of Striking,10000,Very Rare
+Staff of Fire,15000,Very Rare
+Staff of Swarming Insects,2000,Rare
+Staff of Charming,550,Rare
+Staff of Healing,3000,Rare
+Staff of Frost,20000,Very Rare
+Staff of Power,60500,Very Rare
+Staff of the Woodlands,2000,Rare
+Wand of Enemy Detection,3000,Rare
+Wand of Magic Missiles,1500,Uncommon
+Wand of Web,2000,Uncommon
+Wand of Binding,4500,Rare
+Wand of Fear,2000,Rare
+Wand of Paralysis,5000,Rare
+Wand of Fireballs,5000,Rare
+Wand of Lightning Bolts,3500,Rare
+Wand of Polymorph,20000,Very Rare
+Wand of the War Mage +1700,Uncommon
+Wand of the War Mage +2,2000,Rare
+Wand of the War Mage +3,8000,Very Rare
+Tentacle Rod,5000,Rare
+Rod of Lordly Might,15000,Legendary
+Rod of Alertness,5000,Very Rare
+Rod of the Pact Keeper +1900,Uncommon
+Rod of the Pact Keeper +2,3500,Rare
+Rod of the Pact Keeper +3,11000,Very Rare
+Rod of Security,20000,Very Rare
 Armor of Resistance,Armor + 500gp,Rare
-Adamantine Armor,Armor + 500 gp,Uncommon
-Mithral Armor,Armor + 800 gp,Uncommon
-Mariner's Armor,Armor + 200 gp,Uncommon
-Plate Armor of Etherealness,"48,000 gp",Legendary
-Armor of Invulnerability,"50,000 gp",Legendary
-Glamoured Armor,"2,000 gp",Rare
-Dragon Scale Mail,"4,000 gp",Very Rare
-Dwarven Plate,"6,000 gp",Very Rare
-Elven Chain,"2,000 gp",Rare
-Mantle of Spell Resistance,"1,000 gp",Rare
-Robe of Stars,"6,000 gp",Very Rare
-Robe of Scintillating Colors,"4,000 gp",Very Rare
-Robe of the Archmagi,"50,000 gp",Legendary
-Robe of Eyes,"2,500 gp",Rare
-Helm of Teleportation,"40,000 gp",Rare
-Animated Shield,"4,000 gp",Very Rare
-Arrow-Catching Shield,"3,000 gp",Rare
-Shield of Missile Attraction,"1,000 gp",Rare
-Sentinel Shield,800 gp,Uncommon
-Spellguard Shield,"15,000 gp",Very Rare
-Bracers of Archery,500 gp,Uncommon
-Periapt of Wound Closure,900 gp,Uncommon
-Boots of Speed,800 gp,Rare
-Iron Bands of Bilarro,"2,000 gp",Rare
-Circlet of Blasting,500 gp,Uncommon
-Pipes of the Sewers,200 gp,Uncommon
-Rope of Entanglement,600 gp,Rare
-Luckstone,500 gp,Uncommon
-Saddle of the Cavalier,150 gp,Uncommon
-Wind Fan,300 gp,Uncommon
-Gloves of Missile Snaring,450 gp,Uncommon
-Cloak of Protection,"1,000 gp",Uncommon
-Belt of Dwarvenkind,"3,000 gp",Rare
-Belt of Hill Giant Strength,"5,000 gp",Rare
-Belt of Stone Giant Strength,"10,000 gp",Very Rare
-Belt of Frost Giant Strength,"10,000 gp",Very Rare
-Belt of Fire Giant Strength,"25,000 gp",Very Rare
-Belt of Cloud Giant Strength,"50,000 gp",Legendary
+Adamantine Armor,Armor + 500,Uncommon
+Mithral Armor,Armor + 800,Uncommon
+Mariner's Armor,Armor + 200,Uncommon
+Plate Armor of Etherealness,48000,Legendary
+Armor of Invulnerability,50000,Legendary
+Glamoured Armor,2000,Rare
+Dragon Scale Mail,4000,Very Rare
+Dwarven Plate,6000,Very Rare
+Elven Chain,2000,Rare
+Mantle of Spell Resistance,1000,Rare
+Robe of Stars,6000,Very Rare
+Robe of Scintillating Colors,4000,Very Rare
+Robe of the Archmagi,50000,Legendary
+Robe of Eyes,2500,Rare
+Helm of Teleportation,40000,Rare
+Animated Shield,4000,Very Rare
+Arrow-Catching Shield,3000,Rare
+Shield of Missile Attraction,1000,Rare
+Sentinel Shield,800,Uncommon
+Spellguard Shield,15000,Very Rare
+Bracers of Archery,500,Uncommon
+Periapt of Wound Closure,900,Uncommon
+Boots of Speed,800,Rare
+Iron Bands of Bilarro,2000,Rare
+Circlet of Blasting,500,Uncommon
+Pipes of the Sewers,200,Uncommon
+Rope of Entanglement,600,Rare
+Luckstone,500,Uncommon
+Saddle of the Cavalier,150,Uncommon
+Wind Fan,300,Uncommon
+Gloves of Missile Snaring,450,Uncommon
+Cloak of Protection,1000,Uncommon
+Belt of Dwarvenkind,3000,Rare
+Belt of Hill Giant Strength,5000,Rare
+Belt of Stone Giant Strength,10000,Very Rare
+Belt of Frost Giant Strength,10000,Very Rare
+Belt of Fire Giant Strength,25000,Very Rare
+Belt of Cloud Giant Strength,50000,Legendary
 Belt of Storm Giant Strength,Your Soul,Legendary
-Bracers of Defense,"4,000 gp",Rare
-Pearl of Power,500 gp,Uncommon
-Pipes of Haunting,600 gp,Uncommon
-Brooch of Shielding,500 gp,Uncommon
-Amulet of Health,"3,000 gp",Rare
-Gauntlets of Ogre Power,"1,000 gp",Uncommon
-Headband of Intellect,"1,000 gp",Uncommon
-Ring of Resistance,"1,000 gp",Rare
-Ring of Protection,"2,000 gp",Rare
-Ring of Evasion,"2,000 gp",Rare
-Ring of Shooting Stars,"8,000 gp",Very Rare
-Ring of Fire Elemental Command,"15,000 gp",Legendary
-Ring of Free Action,"2,000 gp",Rare
-Ring of Water Elemental Command,"20,000 gp",Legendary
-Ring of Spell Storing,"3,000 gp",Rare
-Ring of Spell Turning,"20,000 gp",Legendary
-Ring of the Ram,"1,500 gp",Rare
-Ring of Feather Falling,800 gp,Rare
-Ring of Regeneration,"10,000 gp",Very Rare
-Scarab of Protection,"30,000 gp",Legendary
-Cloak of Displacement,"8,000 gp",Rare
-Prayer Bead - Bless,200 gp,Rare
-Prayer Bead - Smiting,300 gp,Rare
-Prayer Bead - Curing,"1,000 gp",Rare
-Prayer Bead - Wind Walking,"1,200 gp",Rare
-Prayer Bead - Greater Restoration,"2,500 gp",Rare
-Prayer Bead - Summons,"5,000 gp",Rare
-Instrument of the Bards - Cli Lyre,"2,500 gp",Rare
-Instrument of the Bards - Fochulan Bandlore,"1,500 gp",Uncommon
-Instrument of the Bards - Mac-Fuirmidh Cittern,"2,000 gp",Uncommon
-Instrument of the Bards - Doss Lute,"1,500 gp",Uncommon
-Instrument of the Bards - Canaith Mandolin,"2,500 gp",Rare
-Instrument of the Bards - Anstruth Harp,"5,000 gp",Very Rare
-Instrument of the Bards - Ollamh Harp,"70,000 gp",Legendary
-Luck Blade (Per Charge),"50,000 gp",Legendary
-Helm of Brilliance,"15,000 gp",Very Rare
+Bracers of Defense,4000,Rare
+Pearl of Power,500,Uncommon
+Pipes of Haunting,600,Uncommon
+Brooch of Shielding,500,Uncommon
+Amulet of Health,3000,Rare
+Gauntlets of Ogre Power,1000,Uncommon
+Headband of Intellect,1000,Uncommon
+Ring of Resistance,1000,Rare
+Ring of Protection,2000,Rare
+Ring of Evasion,2000,Rare
+Ring of Shooting Stars,8000,Very Rare
+Ring of Fire Elemental Command,15000,Legendary
+Ring of Free Action,2000,Rare
+Ring of Water Elemental Command,20000,Legendary
+Ring of Spell Storing,3000,Rare
+Ring of Spell Turning,20000,Legendary
+Ring of the Ram,1500,Rare
+Ring of Feather Falling,800,Rare
+Ring of Regeneration,10000,Very Rare
+Scarab of Protection,30000,Legendary
+Cloak of Displacement,8000,Rare
+Prayer Bead - Bless,200,Rare
+Prayer Bead - Smiting,300,Rare
+Prayer Bead - Curing,1000,Rare
+Prayer Bead - Wind Walking,1200,Rare
+Prayer Bead - Greater Restoration,2500,Rare
+Prayer Bead - Summons,5000,Rare
+Instrument of the Bards - Cli Lyre,2500,Rare
+Instrument of the Bards - Fochulan Bandlore,1500,Uncommon
+Instrument of the Bards - Mac-Fuirmidh Cittern,2000,Uncommon
+Instrument of the Bards - Doss Lute,1500,Uncommon
+Instrument of the Bards - Canaith Mandolin,2500,Rare
+Instrument of the Bards - Anstruth Harp,5000,Very Rare
+Instrument of the Bards - Ollamh Harp,70000,Legendary
+Luck Blade (Per Charge),50000,Legendary
+Helm of Brilliance,15000,Very Rare
