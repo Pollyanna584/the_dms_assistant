@@ -1,0 +1,14 @@
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.pet_percentage_low.label }}: {{ form.pet_percentage_low }}<br>
+  {{ form.pet_percentage_high.label }}: {{ form.pet_percentage_high }}<br>
+  {{ form.magic_item_percentage_low.label }}: {{ form.magic_item_percentage_low }}<br>
+  {{ form.magic_item_percentage_high.label }}: {{ form.magic_item_percentage_high }}<br>
+  {{ form.consumable_percentage_low.label }}: {{ form.consumable_percentage_low }}<br>
+  {{ form.consumable_percentage_high.label }}: {{ form.consumable_percentage_high }}<br>
+  {{ form.price_adjustment_low.label }}: {{ form.price_adjustment_low }}<br>
+  {{ form.price_adjustment_high.label }}: {{ form.price_adjustment_high }}<br>
+  {{ form.num_items_in_shop_low_percent.label }}: {{ form.num_items_in_shop_low_percent }}<br>
+  {{ form.num_items_in_shop_high_percent.label }}: {{ form.num_items_in_shop_high_percent }}<br>
+  {{ form.submit }}
+</form>
