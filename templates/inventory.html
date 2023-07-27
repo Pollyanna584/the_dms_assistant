@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Inventory</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <h1>Generated Shop Inventory</h1>
+    <h1>{{ title }}</h1>
     <ul>
         <!-- Loop over the store_inventory list and create a new list item for each item -->
         {% for item in store_inventory %}
@@ -12,6 +12,6 @@
         {% endfor %}
     </ul>
     <!-- Add a button to go back to the form -->
-    <button onclick="window.location.href='/';">Back to Form</button>
+    <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Shop Creator</a>
 </body>
 </html>

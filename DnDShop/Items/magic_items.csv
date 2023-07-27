@@ -71,14 +71,14 @@ Wand of the War Mage +3,8000,Very Rare
 Tentacle Rod,5000,Rare
 Rod of Lordly Might,15000,Legendary
 Rod of Alertness,5000,Very Rare
-Rod of the Pact Keeper +1900,Uncommon
+Rod of the Pact Keeper,1900,Uncommon
 Rod of the Pact Keeper +2,3500,Rare
 Rod of the Pact Keeper +3,11000,Very Rare
 Rod of Security,20000,Very Rare
-Armor of Resistance,Armor + 500gp,Rare
-Adamantine Armor,Armor + 500,Uncommon
-Mithral Armor,Armor + 800,Uncommon
-Mariner's Armor,Armor + 200,Uncommon
+Armor of Resistance(price of armor type +),500,Rare
+Adamantine Armor(price of armor type +),500,Uncommon
+Mithral Armor(price of armor type +),800,Uncommon
+Mariner's Armor(price of armor type +),200,Uncommon
 Plate Armor of Etherealness,48000,Legendary
 Armor of Invulnerability,50000,Legendary
 Glamoured Armor,2000,Rare

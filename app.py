@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import FloatField, SubmitField
 from wtforms.validators import DataRequired
 from DnDShop.TavernTreasure import generate_general_store, adjust_prices
 import pandas as pd
 import os
+from name_generator import NameGenerator  # replace 'name_generator' with your script's name
 
 app = Flask(__name__)
 
@@ -54,8 +55,27 @@ def home():
         # Generate the store inventory
         store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
 
-        return render_template('inventory.html', store_inventory=store_inventory)
+        # Generate the store name
+        try:
+            generator = NameGenerator()
+            title = generator.generate_random_name()
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            title = "Error in name generation"
+        
+        return render_template('inventory.html', store_inventory=store_inventory, title=title)
     return render_template('home.html', form=form)
+
+# @app.route('/inventory')
+# def inventory():
+#     try:
+#         generator = NameGenerator()
+#         title = generator.generate_random_name()
+#     except Exception as e:
+#         print(f"An error occurred: {e}")
+#         title = "Error in name generation"
+        
+#     return render_template('inventory.html', title=title)
 
 if __name__ == '__main__':
     app.run(debug=True)
