@@ -14,8 +14,9 @@
 - The Python version is 3.9-slim-buster and other requirements can be found in [requirements.txt](https://github.com/Pollyanna584/DnD/blob/main/requirements.txt)
 - This can be pulled an ran locally on your browser at localhost:1738
 - You can also pull the docker image at [pollyanna584/the_dms_assistant:latest](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
-- The docker image version will match the github version tag.  Code found here can include other features and bug fixes that 
-
+- The docker image version will match the github version tag.
+- Code found here can include other features and bug fixes that haven't been uploaded to docker yet
+- If you'd like to support the project, consider donating to the [Foundation for Thymic Cancer Research](https://thymic.org/donate-to-the-foundation/) with the "In the memory of George Monk" in the notes
 
 ## Features
 - Will generate a random shop name with a random amount of items based on the parameters given on the first page
@@ -24,3 +25,6 @@
 ## Bugs
 - If you change the values where the high is a lower number than the low the page will break and you'll have to reload
 - If any of the 3 values (Pets, Magic Items, and Consumables) do not return an item then nothing will display
+
+## Credits
+- Shout out to [r/D100](https://www.reddit.com/r/d100/) and [u/rusty8684](https://www.reddit.com/user/rusty8684) for the voice prompts!

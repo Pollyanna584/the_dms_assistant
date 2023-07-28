@@ -7,7 +7,8 @@ import pandas as pd
 import os
 import csv
 import io
-from name_generator import NameGenerator  # replace 'name_generator' with your script's name
+from name_generator import NameGenerator #Shop Name Generator
+from Shopkeeper.shopkeeper_name import ShopkeeperGenerator
 
 app = Flask(__name__)
 
@@ -56,20 +57,23 @@ def home():
         df_summons_pets = adjust_prices(df_summons_pets, price_adjustment_range)
         df_consumables = adjust_prices(df_consumables, price_adjustment_range)
 
-        # Generate the store inventory
-        store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
-
-        # Generate the store name
+        # Generate the store name and the shopkeeper
         try:
             generator = NameGenerator()
             store_title = generator.generate_random_name()
+            shopkeeper_generator = ShopkeeperGenerator()
+            shopkeeper = shopkeeper_generator.generate_shopkeeper()  # generate a shopkeeper
         except Exception as e:
             print(f"An error occurred: {e}")
             store_title = "Error in name generation"
+            shopkeeper = {"Name": "Error", "Race": "Error", "Voice": "Error"}
 
-        # session['store_inventory'] = store_inventory
+        # Generate the store inventory
+        store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
+
         session['store_inventory'] = [(item_name, item_price) for item_name, item_price in store_inventory]
         session['store_title'] = store_title
+        session['shopkeeper'] = shopkeeper  # store the shopkeeper details in the session
         
         return redirect(url_for('inventory'))  # redirect to the inventory route
     return render_template('home.html', form=form)
@@ -78,10 +82,12 @@ def home():
 def inventory():
     store_inventory = session.get('store_inventory', [])
     store_title = session.get('store_title', "Default Store Name")
+    shopkeeper = session.get('shopkeeper', {"Name": "Default", "Race": "Default", "Voice": "Default"})  # get the shopkeeper details from the session
     
     # Convert inventory to list of dictionaries for the template
     store_inventory_dicts = [{"Item Name": item[0], "Item Price": item[1]} for item in store_inventory]
-    return render_template('inventory.html', store_inventory=store_inventory_dicts, store_title=store_title)
+    return render_template('inventory.html', store_inventory=store_inventory_dicts, shopkeeper=shopkeeper, store_title=store_title)
+
 
 
 @app.route('/download')
@@ -89,12 +95,17 @@ def download():
     # Get store inventory and title from the session
     store_inventory = session.get('store_inventory', [])
     store_title = session.get('store_title', "Default Store Name")
+    shopkeeper = session.get('shopkeeper', {"Name": "Default", "Race": "Default", "Voice": "Default"})
 
     # Convert the inventory to a CSV
     si_csv = io.StringIO()
     writer = csv.writer(si_csv)
+    writer.writerow(['Shopkeeper Name', shopkeeper["Name"]])
+    writer.writerow(['Shopkeeper Race', shopkeeper["Race"]])
+    writer.writerow(['Shopkeeper Voice', shopkeeper["Voice"]])
+    writer.writerow([])  # Optional empty row for separation
     writer.writerow(['Item Name', 'Item Price'])
-    
+
     for item in store_inventory:
         writer.writerow([item[0], item[1]])  # Each item is a tuple (name, price)
     
@@ -103,6 +114,7 @@ def download():
     output.headers["Content-Disposition"] = f"attachment; filename={store_title.replace(' ', '_')}.csv"
     output.headers["Content-type"] = "text/csv"
     return output
+
 
 
 if __name__ == '__main__':
