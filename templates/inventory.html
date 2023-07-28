@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ title }}</title>
+    <title>{{ store_title }}</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
+    <h1>{{ store_title }}</h1>
     <ul>
         <!-- Loop over the store_inventory list and create a new list item for each item -->
         {% for item in store_inventory %}
@@ -13,5 +13,6 @@
     </ul>
     <!-- Add a button to go back to the form -->
     <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Shop Creator</a>
+    <a href="{{ url_for('download') }}" class="btn btn-primary">Download as CSV</a>
 </body>
 </html>

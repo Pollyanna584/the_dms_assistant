@@ -144,5 +144,5 @@ name_gen = NameGenerator()
 chosen_adj = name_gen.choose_adj()
 needs_plural = name_gen.needs_plural(chosen_adj)
 
-generator = NameGenerator()
-print(generator.generate_random_name())
+# generator = NameGenerator()
+# print(generator.generate_random_name())
