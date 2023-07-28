@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, make_response
+from flask import Flask, render_template, session, make_response, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import FloatField, SubmitField
 from wtforms.validators import DataRequired
@@ -65,11 +65,22 @@ def home():
             print(f"An error occurred: {e}")
             store_title = "Error in name generation"
 
-        session['store_inventory'] = store_inventory
+        # session['store_inventory'] = store_inventory
+        session['store_inventory'] = [(item_name, item_price) for item_name, item_price in store_inventory]
         session['store_title'] = store_title
         
-        return render_template('inventory.html', store_inventory=store_inventory, store_title=store_title)
+        return redirect(url_for('inventory'))  # redirect to the inventory route
     return render_template('home.html', form=form)
+
+@app.route('/inventory')
+def inventory():
+    store_inventory = session.get('store_inventory', [])
+    store_title = session.get('store_title', "Default Store Name")
+    
+    # Convert inventory to list of dictionaries for the template
+    store_inventory_dicts = [{"Item Name": item[0], "Item Price": item[1]} for item in store_inventory]
+    return render_template('inventory.html', store_inventory=store_inventory_dicts, store_title=store_title)
+
 
 @app.route('/download')
 def download():
@@ -94,3 +105,5 @@ def download():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1738, debug=True)
+
+

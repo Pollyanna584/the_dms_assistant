@@ -3,16 +3,28 @@
 <head>
     <title>{{ store_title }}</title>
 </head>
-<body>
-    <h1>{{ store_title }}</h1>
-    <ul>
-        <!-- Loop over the store_inventory list and create a new list item for each item -->
+<h1>{{ store_title }}</h1>
+<table>
+    <thead>
+        <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for item in store_inventory %}
-            <li>{{ item }}</li>
+        <tr>
+        <td>{{ item["Item Name"] }}</td>
+        <td>{{ item["Item Price"] }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+</table>
+<br>
+<body>
     <!-- Add a button to go back to the form -->
     <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Shop Creator</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="{{ url_for('download') }}" class="btn btn-primary">Download as CSV</a>
 </body>
 </html>
