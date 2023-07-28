@@ -1,7 +1,7 @@
 from flask import Flask, render_template, session, make_response, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import FloatField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, NumberRange
 from DnDShop.TavernTreasure import generate_general_store, adjust_prices
 import pandas as pd
 import os
@@ -14,16 +14,16 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'PoXu9hYm6W96vrtEkomwX4fjAJVMteEi'  # you should use a real, secret key here
 
 class StoreForm(FlaskForm):
-    pet_percentage_low = FloatField('Pet Percentage Low:', validators=[DataRequired()], default=3)
-    pet_percentage_high = FloatField('Pet Percentage High:', validators=[DataRequired()], default=5)
-    magic_item_percentage_low = FloatField('Magic Item Percentage Low:', validators=[DataRequired()], default=5)
-    magic_item_percentage_high = FloatField('Magic Item Percentage High:', validators=[DataRequired()], default=10)
-    consumable_percentage_low = FloatField('Consumable Percentage Low:', validators=[DataRequired()], default=30)
-    consumable_percentage_high = FloatField('Consumable Percentage High:', validators=[DataRequired()], default=40)
-    price_adjustment_low = FloatField('Price Adjustment Low:', validators=[DataRequired()], default=100)
-    price_adjustment_high = FloatField('Price Adjustment High:', validators=[DataRequired()], default=105)
-    num_items_in_shop_low_percent = FloatField('Number of Items in Shop Low Percent:', validators=[DataRequired()], default=5)
-    num_items_in_shop_high_percent = FloatField('Number of Items in Shop High Percent:', validators=[DataRequired()], default=10)
+    pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[DataRequired()], default=3)
+    pet_percentage_high = FloatField('Pet Percentage - High:', validators=[DataRequired()], default=5)
+    magic_item_percentage_low = FloatField('Magic Item Percentage - Low:', validators=[DataRequired()], default=5)
+    magic_item_percentage_high = FloatField('Magic Item Percentage - High:', validators=[DataRequired()], default=10)
+    consumable_percentage_low = FloatField('Consumable Percentage - Low:', validators=[DataRequired()], default=30)
+    consumable_percentage_high = FloatField('Consumable Percentage - High:', validators=[DataRequired()], default=40)
+    price_adjustment_low = FloatField('Discount Percentage - Low:', validators=[NumberRange(min=-100, max=100)], default=-10)
+    price_adjustment_high = FloatField('Discount Percentage - High:', validators=[NumberRange(min=-100, max=100)], default=0)
+    num_items_in_shop_low_percent = FloatField('Number of Items in Shop - Low Percent:', validators=[DataRequired()], default=5)
+    num_items_in_shop_high_percent = FloatField('Number of Items in Shop - High Percent:', validators=[DataRequired()], default=10)
     submit = SubmitField('Generate')
 
 @app.route('/', methods=['GET', 'POST'])
@@ -31,7 +31,9 @@ def home():
     form = StoreForm()
     if form.validate_on_submit():
         # Get the range data from the form
-        price_adjustment_range = (form.price_adjustment_low.data, form.price_adjustment_high.data)
+        price_adjustment_low = 100 + form.price_adjustment_low.data
+        price_adjustment_high = 100 + form.price_adjustment_high.data
+        price_adjustment_range = (price_adjustment_low, price_adjustment_high)
         pet_percentage_range = (form.pet_percentage_low.data, form.pet_percentage_high.data)
         magic_item_percentage_range = (form.magic_item_percentage_low.data, form.magic_item_percentage_high.data)
         consumable_percentage_range = (form.consumable_percentage_low.data, form.consumable_percentage_high.data)

@@ -14,6 +14,7 @@
 - The Python version is 3.9-slim-buster and other requirements can be found in [requirements.txt](https://github.com/Pollyanna584/DnD/blob/main/requirements.txt)
 - This can be pulled an ran locally on your browser at localhost:1738
 - You can also pull the docker image at [pollyanna584/the_dms_assistant:latest](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
+- The docker image version will match the github version tag.  Code found here can include other features and bug fixes that 
 
 
 ## Features

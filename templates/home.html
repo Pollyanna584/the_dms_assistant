@@ -8,15 +8,30 @@
 </body>
 <form method="POST">
   {{ form.hidden_tag() }}
-  {{ form.pet_percentage_low.label }}: {{ form.pet_percentage_low }}<br>
-  {{ form.pet_percentage_high.label }}: {{ form.pet_percentage_high }}<br>
-  {{ form.magic_item_percentage_low.label }}: {{ form.magic_item_percentage_low }}<br>
-  {{ form.magic_item_percentage_high.label }}: {{ form.magic_item_percentage_high }}<br>
-  {{ form.consumable_percentage_low.label }}: {{ form.consumable_percentage_low }}<br>
-  {{ form.consumable_percentage_high.label }}: {{ form.consumable_percentage_high }}<br>
+  {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.magic_item_percentage_low.label }} {{ form.magic_item_percentage_low(title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.magic_item_percentage_high.label }} {{ form.magic_item_percentage_high(title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.consumable_percentage_low.label }} {{ form.consumable_percentage_low(title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+  {{ form.consumable_percentage_high.label }} {{ form.consumable_percentage_high(title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+  {{ form.price_adjustment_low.label }} {{ form.price_adjustment_low(title="The price adjustment's low percentage (-10 gives discount of up to 10%)") }}<br>
+  {{ form.price_adjustment_high.label }} {{ form.price_adjustment_high(title="The price adjustment's high percentage (10 gives upcharge up to 10%)") }}<br>
+  {{ form.num_items_in_shop_low_percent.label }} {{ form.num_items_in_shop_low_percent(title="The minimum percentage of total items in the shop of 266 possible.") }}<br>
+  {{ form.num_items_in_shop_high_percent.label }} {{ form.num_items_in_shop_high_percent(title="The maximum percentage of total items in the shop of 266 possible.") }}<br>
+  {{ form.submit }}
+</form>
+
+<!-- <form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.pet_percentage_low.label }}: {{ form.pet_percentage_low(title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.pet_percentage_high.label }}: {{ form.pet_percentage_high(title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.magic_item_percentage_low.label }}: {{ form.magic_item_percentage_low(title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.magic_item_percentage_high.label }}: {{ form.magic_item_percentage_high(title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.consumable_percentage_low.label }}: {{ form.consumable_percentage_low(title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+  {{ form.consumable_percentage_high.label }}: {{ form.consumable_percentage_high(title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
   {{ form.price_adjustment_low.label }}: {{ form.price_adjustment_low }}<br>
   {{ form.price_adjustment_high.label }}: {{ form.price_adjustment_high }}<br>
   {{ form.num_items_in_shop_low_percent.label }}: {{ form.num_items_in_shop_low_percent }}<br>
   {{ form.num_items_in_shop_high_percent.label }}: {{ form.num_items_in_shop_high_percent }}<br>
   {{ form.submit }}
-</form>
+</form> -->
