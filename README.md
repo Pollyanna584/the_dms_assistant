@@ -40,7 +40,7 @@ The DM's Assitant will be available at [http://localhost:1738/](http://localhost
 # D&D Shop Creator!
 ## About:
 - The magic items in the shop can be found in the [DnDShop/Items](https://github.com/Pollyanna584/DnD/tree/main/DnDShop/Items) folder.  It is a list of magic items from the 5e source books but can be edited to be used for any TTRPG
-- If you'd like tu run it locally, the Python version in the docker container is 3.9 because of numpy issues but I wrote it on 3.10.6 and it works fine when not compiling it to a docker container. 
+- If you'd like to run it locally, the Python version in the docker container is 3.9 because of numpy issues but I wrote it on 3.10.6 and it works fine when not compiling it to a docker container. 
 - Other requirements can be found in [requirements.txt](https://github.com/Pollyanna584/DnD/blob/main/requirements.txt)
 - Running it locally will allow you to change the CSV files for other TTRPGs
 - If ran locally, you can access it at [localhost:1738](localhost:1738)
