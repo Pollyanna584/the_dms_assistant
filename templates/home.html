@@ -7,33 +7,63 @@
 </head>
 <body>
   <h1>D&D Shop Creator!</h1>
+  <button type="button" id="low-button">Low</button>
+  <button type="button" id="medium-button">Medium</button>
+  <button type="button" id="high-button">High</button>  
 </body>
 <form method="POST">
   {{ form.hidden_tag() }}
-  {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
-  {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
-  {{ form.magic_item_percentage_low.label }} {{ form.magic_item_percentage_low(title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
-  {{ form.magic_item_percentage_high.label }} {{ form.magic_item_percentage_high(title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
-  {{ form.consumable_percentage_low.label }} {{ form.consumable_percentage_low(title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
-  {{ form.consumable_percentage_high.label }} {{ form.consumable_percentage_high(title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
-  {{ form.price_adjustment_low.label }} {{ form.price_adjustment_low(title="The price adjustment's low percentage (-10 gives discount of up to 10%)") }}<br>
-  {{ form.price_adjustment_high.label }} {{ form.price_adjustment_high(title="The price adjustment's high percentage (10 gives upcharge up to 10%)") }}<br>
-  {{ form.num_items_in_shop_low_percent.label }} {{ form.num_items_in_shop_low_percent(title="The minimum percentage of total items in the shop of 266 possible.") }}<br>
-  {{ form.num_items_in_shop_high_percent.label }} {{ form.num_items_in_shop_high_percent(title="The maximum percentage of total items in the shop of 266 possible.") }}<br>
+  <!-- {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br> -->
+  {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(id="pet_percentage_low", title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(id="pet_percentage_high", title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+  {{ form.magic_item_percentage_low.label }} {{ form.magic_item_percentage_low(id="magic_item_percentage_low", title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.magic_item_percentage_high.label }} {{ form.magic_item_percentage_high(id="magic_item_percentage_high", title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+  {{ form.consumable_percentage_low.label }} {{ form.consumable_percentage_low(id="consumable_percentage_low", title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+  {{ form.consumable_percentage_high.label }} {{ form.consumable_percentage_high(id="consumable_percentage_high", title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+  {{ form.price_adjustment_low.label }} {{ form.price_adjustment_low(id="price_adjustment_low", title="The price adjustment's low percentage (-10 gives discount of up to 10%)") }}<br>
+  {{ form.price_adjustment_high.label }} {{ form.price_adjustment_high(id="price_adjustment_high", title="The price adjustment's high percentage (10 gives upcharge up to 10%)") }}<br>
+  {{ form.num_items_in_shop_low_percent.label }} {{ form.num_items_in_shop_low_percent(id="num_items_in_shop_low_percent", title="The minimum percentage of total items in the shop of 266 possible.") }}<br>
+  {{ form.num_items_in_shop_high_percent.label }} {{ form.num_items_in_shop_high_percent(id="num_items_in_shop_high_percent", title="The maximum percentage of total items in the shop of 266 possible.") }}<br>
   {{ form.submit }}
 </form>
 
-<!-- <form method="POST">
-  {{ form.hidden_tag() }}
-  {{ form.pet_percentage_low.label }}: {{ form.pet_percentage_low(title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
-  {{ form.pet_percentage_high.label }}: {{ form.pet_percentage_high(title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
-  {{ form.magic_item_percentage_low.label }}: {{ form.magic_item_percentage_low(title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
-  {{ form.magic_item_percentage_high.label }}: {{ form.magic_item_percentage_high(title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
-  {{ form.consumable_percentage_low.label }}: {{ form.consumable_percentage_low(title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
-  {{ form.consumable_percentage_high.label }}: {{ form.consumable_percentage_high(title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
-  {{ form.price_adjustment_low.label }}: {{ form.price_adjustment_low }}<br>
-  {{ form.price_adjustment_high.label }}: {{ form.price_adjustment_high }}<br>
-  {{ form.num_items_in_shop_low_percent.label }}: {{ form.num_items_in_shop_low_percent }}<br>
-  {{ form.num_items_in_shop_high_percent.label }}: {{ form.num_items_in_shop_high_percent }}<br>
-  {{ form.submit }}
-</form> -->
+<script type="text/javascript">
+  document.getElementById('low-button').onclick = function() {
+    document.getElementById('pet_percentage_low').value = "6"; 
+    document.getElementById('pet_percentage_high').value = "12"; 
+    document.getElementById('magic_item_percentage_low').value = "5";
+    document.getElementById('magic_item_percentage_high').value = "10";
+    document.getElementById('consumable_percentage_low').value = "30";
+    document.getElementById('consumable_percentage_high').value = "40";
+    document.getElementById('price_adjustment_low').value = "-10";
+    document.getElementById('price_adjustment_high').value = "0";
+    document.getElementById('num_items_in_shop_low_percent').value = "5";
+    document.getElementById('num_items_in_shop_high_percent').value = "10";
+  };
+</script>
+
+<script type="text/javascript">
+  document.getElementById('medium-button').onclick = function() {
+    document.getElementById('pet_percentage_low').value = "6"; 
+    document.getElementById('pet_percentage_high').value = "12"; 
+    document.getElementById('magic_item_percentage_low').value = "5";
+    document.getElementById('magic_item_percentage_high').value = "10";
+    document.getElementById('consumable_percentage_low').value = "30";
+    document.getElementById('consumable_percentage_high').value = "40";
+    document.getElementById('num_items_in_shop_low_percent').value = "5";
+    document.getElementById('num_items_in_shop_high_percent').value = "10";
+  };
+</script>
+
+<script type="text/javascript">
+  document.getElementById('high-button').onclick = function() {
+    document.getElementById('pet_percentage_low').value = "10"; 
+    document.getElementById('pet_percentage_high').value = "20"; 
+    document.getElementById('magic_item_percentage_low').value = "15";
+    document.getElementById('magic_item_percentage_high').value = "30";
+    document.getElementById('consumable_percentage_low').value = "10";
+    document.getElementById('consumable_percentage_high').value = "20";
+    document.getElementById('num_items_in_shop_low_percent').value = "10";
+    document.getElementById('num_items_in_shop_high_percent').value = "20";
+  };
+</script>
