@@ -80,14 +80,14 @@ def download():
     # Convert the inventory to a CSV
     si_csv = io.StringIO()
     writer = csv.writer(si_csv)
-    writer.writerow(['Store Name', 'Item Name', 'Item Price'])
+    writer.writerow(['Item Name', 'Item Price'])
     
     for item in store_inventory:
-        writer.writerow([store_title, item[0], item[1]])  # Each item is a tuple (name, price)
+        writer.writerow([item[0], item[1]])  # Each item is a tuple (name, price)
     
     # Create the response
     output = make_response(si_csv.getvalue())
-    output.headers["Content-Disposition"] = "attachment; filename=store_inventory.csv"
+    output.headers["Content-Disposition"] = f"attachment; filename={store_title.replace(' ', '_')}.csv"
     output.headers["Content-type"] = "text/csv"
     return output
 
