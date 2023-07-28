@@ -6,7 +6,7 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Pollyanna584/DnD?style=social)
 [![Docker Pulls](https://img.shields.io/docker/pulls/pollyanna584/the_dms_assistant.svg)](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
-[![Docker Version](https://img.shields.io/docker/v/pollyanna584/the_dms_assistant?sort=semver)](https://hub.docker.com/r/pollyanna584/the_dms_assistant))
+[![Docker Version](https://img.shields.io/docker/v/pollyanna584/the_dms_assistant?sort=semver)](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
 
 # About :
 - The DM's Assitant is a tool to assist Dungeon Masters playing Dungeons and Dragons 5e
