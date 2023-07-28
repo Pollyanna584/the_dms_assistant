@@ -1,6 +1,9 @@
 # The DM's Assistant:
 ### A 5e DungeonMaster tool I am developing for myself
-  
+#
+### https://dmassist.monkcloud.win/
+#
+
 ![GitHub Repo stars](https://img.shields.io/github/stars/Pollyanna584/DnD?style=social)
 [![Docker Pulls](https://img.shields.io/docker/pulls/pollyanna584/the_dms_assistant.svg)](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
 [![Docker Version](https://img.shields.io/docker/v/pollyanna584/the_dms_assistant?sort=semver)](https://hub.docker.com/r/pollyanna584/the_dms_assistant))
@@ -8,8 +11,8 @@
 # About :
 - The DM's Assitant is a tool to assist Dungeon Masters playing Dungeons and Dragons 5e
 - The magic items in the shop can be found in the [DnDShop/Items](https://github.com/Pollyanna584/DnD/tree/main/DnDShop/Items) folder.  It is a list of magic items from the 5e source books but can be edited to be used for any TTRPG
-- Requirements can be found in [requirements.txt](https://github.com/Pollyanna584/DnD/blob/main/requirements.txt)
-- This can be pulled an ran locally at localhost:1738
+- The Python version is 3.9-slim-buster and other requirements can be found in [requirements.txt](https://github.com/Pollyanna584/DnD/blob/main/requirements.txt)
+- This can be pulled an ran locally on your browser at localhost:1738
 - You can also pull the docker image at [pollyanna584/the_dms_assistant:latest](https://hub.docker.com/r/pollyanna584/the_dms_assistant)
 
 
