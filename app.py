@@ -15,16 +15,16 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'PoXu9hYm6W96vrtEkomwX4fjAJVMteEi'  # you should use a real, secret key here
 
 class StoreForm(FlaskForm):
-    pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[DataRequired()], default=3)
-    pet_percentage_high = FloatField('Pet Percentage - High:', validators=[DataRequired()], default=5)
+    pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[DataRequired()], default=6)
+    pet_percentage_high = FloatField('Pet Percentage - High:', validators=[DataRequired()], default=12)
     magic_item_percentage_low = FloatField('Magic Item Percentage - Low:', validators=[DataRequired()], default=5)
     magic_item_percentage_high = FloatField('Magic Item Percentage - High:', validators=[DataRequired()], default=10)
-    consumable_percentage_low = FloatField('Consumable Percentage - Low:', validators=[DataRequired()], default=30)
-    consumable_percentage_high = FloatField('Consumable Percentage - High:', validators=[DataRequired()], default=40)
+    consumable_percentage_low = FloatField('Consumable Percentage - Low:', validators=[DataRequired()], default=20)
+    consumable_percentage_high = FloatField('Consumable Percentage - High:', validators=[DataRequired()], default=30)
     price_adjustment_low = FloatField('Discount Percentage - Low:', validators=[NumberRange(min=-100, max=100)], default=-10)
     price_adjustment_high = FloatField('Discount Percentage - High:', validators=[NumberRange(min=-100, max=100)], default=0)
-    num_items_in_shop_low_percent = FloatField('Number of Items in Shop - Low Percent:', validators=[DataRequired()], default=5)
-    num_items_in_shop_high_percent = FloatField('Number of Items in Shop - High Percent:', validators=[DataRequired()], default=10)
+    num_items_in_shop_low_percent = FloatField('Number of Items in Shop - Low Percent:', validators=[DataRequired()], default=10)
+    num_items_in_shop_high_percent = FloatField('Number of Items in Shop - High Percent:', validators=[DataRequired()], default=20)
     submit = SubmitField('Generate')
 
 @app.route('/', methods=['GET', 'POST'])
