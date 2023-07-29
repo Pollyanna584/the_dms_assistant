@@ -7,9 +7,11 @@
 </head>
 <body>
   <h1>D&D Shop Creator!</h1>
-  <button type="button" id="low-button">Low</button>
-  <button type="button" id="medium-button">Medium</button>
-  <button type="button" id="high-button">High</button>  
+  <hr>
+  <button type="button" id="low-button">Low</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" id="medium-button">Medium</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" id="high-button">High</button> 
+  <hr> 
 </body>
 <form method="POST">
   {{ form.hidden_tag() }}
@@ -29,14 +31,12 @@
 
 <script type="text/javascript">
   document.getElementById('low-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "6"; 
-    document.getElementById('pet_percentage_high').value = "12"; 
-    document.getElementById('magic_item_percentage_low').value = "5";
-    document.getElementById('magic_item_percentage_high').value = "10";
-    document.getElementById('consumable_percentage_low').value = "30";
-    document.getElementById('consumable_percentage_high').value = "40";
-    document.getElementById('price_adjustment_low').value = "-10";
-    document.getElementById('price_adjustment_high').value = "0";
+    document.getElementById('pet_percentage_low').value = "3"; 
+    document.getElementById('pet_percentage_high').value = "6"; 
+    document.getElementById('magic_item_percentage_low').value = "3";
+    document.getElementById('magic_item_percentage_high').value = "6";
+    document.getElementById('consumable_percentage_low').value = "15";
+    document.getElementById('consumable_percentage_high').value = "20";
     document.getElementById('num_items_in_shop_low_percent').value = "5";
     document.getElementById('num_items_in_shop_high_percent').value = "10";
   };
@@ -48,10 +48,10 @@
     document.getElementById('pet_percentage_high').value = "12"; 
     document.getElementById('magic_item_percentage_low').value = "5";
     document.getElementById('magic_item_percentage_high').value = "10";
-    document.getElementById('consumable_percentage_low').value = "30";
-    document.getElementById('consumable_percentage_high').value = "40";
-    document.getElementById('num_items_in_shop_low_percent').value = "5";
-    document.getElementById('num_items_in_shop_high_percent').value = "10";
+    document.getElementById('consumable_percentage_low').value = "20";
+    document.getElementById('consumable_percentage_high').value = "30";
+    document.getElementById('num_items_in_shop_low_percent').value = "10";
+    document.getElementById('num_items_in_shop_high_percent').value = "20";
   };
 </script>
 
@@ -61,9 +61,9 @@
     document.getElementById('pet_percentage_high').value = "20"; 
     document.getElementById('magic_item_percentage_low').value = "15";
     document.getElementById('magic_item_percentage_high').value = "30";
-    document.getElementById('consumable_percentage_low').value = "10";
-    document.getElementById('consumable_percentage_high').value = "20";
-    document.getElementById('num_items_in_shop_low_percent').value = "10";
-    document.getElementById('num_items_in_shop_high_percent').value = "20";
+    document.getElementById('consumable_percentage_low').value = "30";
+    document.getElementById('consumable_percentage_high').value = "40";
+    document.getElementById('num_items_in_shop_low_percent').value = "20";
+    document.getElementById('num_items_in_shop_high_percent').value = "30";
   };
 </script>
