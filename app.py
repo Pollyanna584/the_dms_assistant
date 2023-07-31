@@ -100,6 +100,7 @@ def inventory():
 def download():
     # Get store inventory and title from the session
     store_inventory = session.get('store_inventory', [])
+    stable_inventory = session.get('stable_inventory', [])  # Get the creature stable inventory from the session
     store_title = session.get('store_title', "Default Store Name")
     shopkeeper = session.get('shopkeeper', {"Name": "Default", "Race": "Default", "Voice": "Default"})
 
@@ -114,16 +115,18 @@ def download():
 
     for item in store_inventory:
         writer.writerow([item[0], item[1]])  # Each item is a tuple (name, price)
-    
+
+    # Add creature stables
+    writer.writerow([])  # Optional empty row for separation
+    writer.writerow(['Creature Name', 'Creature Price'])
+    for creature in stable_inventory:
+        writer.writerow([creature[0], creature[1]])  # Each creature is a tuple (name, price)
+
     # Create the response
     output = make_response(si_csv.getvalue())
     output.headers["Content-Disposition"] = f"attachment; filename={store_title.replace(' ', '_')}.csv"
     output.headers["Content-type"] = "text/csv"
     return output
 
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1738, debug=True)
-
-

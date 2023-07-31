@@ -96,7 +96,6 @@ def generate_creature_stables(df_summons_pets, price_adjustment_range, num_items
 
     return stable_inventory
 
-
 data_dir = os.path.dirname(os.path.realpath(__file__))
 df_magical = pd.read_csv(f'{data_dir}/Items/magic_items.csv').dropna(subset=['Name'])
 df_summons_pets = pd.read_csv(f'{data_dir}/Items/summons_pets.csv').dropna(subset=['Name'])
@@ -111,6 +110,3 @@ df_consumables['Price'] = pd.to_numeric(df_consumables['Price'], errors='coerce'
 df_magical = adjust_prices(df_magical, price_adjustment_range)
 df_summons_pets = adjust_prices(df_summons_pets, price_adjustment_range)
 df_consumables = adjust_prices(df_consumables, price_adjustment_range)
-
-# Generate and print the store inventory
-# store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
