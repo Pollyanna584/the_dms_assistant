@@ -7,6 +7,7 @@ import pandas as pd
 import os
 import csv
 import io
+import random
 from name_generator import NameGenerator #Shop Name Generator
 from Shopkeeper.shopkeeper_name import ShopkeeperGenerator
 
@@ -71,10 +72,11 @@ def home():
         pet_percentage_low = form.pet_percentage_low.data
         pet_percentage_high = form.pet_percentage_high.data
 
-        num_items_in_stables_range = (pet_percentage_low / 100 * len(df_summons_pets), pet_percentage_high / 100 * len(df_summons_pets))
+        num_items_in_stables_range = (round(pet_percentage_low / 100 * len(df_summons_pets)), round(pet_percentage_high / 100 * len(df_summons_pets)))
+        num_items_in_stables = random.randint(*num_items_in_stables_range)
 
         store_inventory = generate_general_store(df_magical, df_consumables, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
-        stable_inventory = generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables_range)
+        stable_inventory = generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables)
         session['store_inventory'] = [(item_name, item_price) for item_name, item_price in store_inventory]
         session['stable_inventory'] = [(item_name, item_price) for item_name, item_price in stable_inventory]
         session['store_title'] = store_title

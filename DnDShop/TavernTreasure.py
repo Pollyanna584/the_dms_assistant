@@ -83,10 +83,9 @@ def generate_general_store(df_magical, df_consumables, magic_item_percentage_ran
 
     return store_inventory
 
-def generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables_range):
+def generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables):
     df_summons_pets = adjust_prices(df_summons_pets, price_adjustment_range)
 
-    num_items_in_stables = round(random.uniform(*num_items_in_stables_range) * len(df_summons_pets))
     stable_inventory = random.sample(list(df_summons_pets[['Name', 'Adjusted Price']].itertuples(index=False, name=None)), min(len(df_summons_pets), num_items_in_stables))
 
     for idx, item in enumerate(stable_inventory, 1):
