@@ -1,8 +1,8 @@
 from flask import Flask, render_template, session, make_response, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import FloatField, SubmitField
-from wtforms.validators import DataRequired, NumberRange
-from DnDShop.TavernTreasure import generate_general_store, adjust_prices
+from wtforms.validators import DataRequired, NumberRange, InputRequired
+from DnDShop.TavernTreasure import generate_general_store, adjust_prices, generate_creature_stables
 import pandas as pd
 import os
 import csv
@@ -15,16 +15,16 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'PoXu9hYm6W96vrtEkomwX4fjAJVMteEi'  # you should use a real, secret key here
 
 class StoreForm(FlaskForm):
-    pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[DataRequired()], default=6)
-    pet_percentage_high = FloatField('Pet Percentage - High:', validators=[DataRequired()], default=12)
-    magic_item_percentage_low = FloatField('Magic Item Percentage - Low:', validators=[DataRequired()], default=5)
-    magic_item_percentage_high = FloatField('Magic Item Percentage - High:', validators=[DataRequired()], default=10)
-    consumable_percentage_low = FloatField('Consumable Percentage - Low:', validators=[DataRequired()], default=20)
-    consumable_percentage_high = FloatField('Consumable Percentage - High:', validators=[DataRequired()], default=30)
+    pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[InputRequired()], default=6)
+    pet_percentage_high = FloatField('Pet Percentage - High:', validators=[InputRequired()], default=12)
+    magic_item_percentage_low = FloatField('Magic Item Percentage - Low:', validators=[InputRequired()], default=5)
+    magic_item_percentage_high = FloatField('Magic Item Percentage - High:', validators=[InputRequired()], default=10)
+    consumable_percentage_low = FloatField('Consumable Percentage - Low:', validators=[InputRequired()], default=20)
+    consumable_percentage_high = FloatField('Consumable Percentage - High:', validators=[InputRequired()], default=30)
     price_adjustment_low = FloatField('Discount Percentage - Low:', validators=[NumberRange(min=-100, max=100)], default=-10)
     price_adjustment_high = FloatField('Discount Percentage - High:', validators=[NumberRange(min=-100, max=100)], default=0)
-    num_items_in_shop_low_percent = FloatField('Number of Items in Shop - Low Percent:', validators=[DataRequired()], default=10)
-    num_items_in_shop_high_percent = FloatField('Number of Items in Shop - High Percent:', validators=[DataRequired()], default=20)
+    num_items_in_shop_low_percent = FloatField('Number of Items in Shop - Low Percent:', validators=[InputRequired()], default=10)
+    num_items_in_shop_high_percent = FloatField('Number of Items in Shop - High Percent:', validators=[InputRequired()], default=20)
     submit = SubmitField('Generate')
 
 @app.route('/', methods=['GET', 'POST'])
@@ -68,27 +68,33 @@ def home():
             store_title = "Error in name generation"
             shopkeeper = {"Name": "Error", "Race": "Error", "Voice": "Error"}
 
-        # Generate the store inventory
-        store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
+        pet_percentage_low = form.pet_percentage_low.data
+        pet_percentage_high = form.pet_percentage_high.data
 
+        num_items_in_stables_range = (pet_percentage_low / 100 * len(df_summons_pets), pet_percentage_high / 100 * len(df_summons_pets))
+
+        store_inventory = generate_general_store(df_magical, df_consumables, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
+        stable_inventory = generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables_range)
         session['store_inventory'] = [(item_name, item_price) for item_name, item_price in store_inventory]
+        session['stable_inventory'] = [(item_name, item_price) for item_name, item_price in stable_inventory]
         session['store_title'] = store_title
         session['shopkeeper'] = shopkeeper  # store the shopkeeper details in the session
-        
+
         return redirect(url_for('inventory'))  # redirect to the inventory route
     return render_template('home.html', form=form)
 
 @app.route('/inventory')
 def inventory():
     store_inventory = session.get('store_inventory', [])
+    stable_inventory = session.get('stable_inventory', [])
     store_title = session.get('store_title', "Default Store Name")
     shopkeeper = session.get('shopkeeper', {"Name": "Default", "Race": "Default", "Voice": "Default"})  # get the shopkeeper details from the session
-    
-    # Convert inventory to list of dictionaries for the template
+
+    # Convert inventories to lists of dictionaries for the template
     store_inventory_dicts = [{"Item Name": item[0], "Item Price": item[1]} for item in store_inventory]
-    return render_template('inventory.html', store_inventory=store_inventory_dicts, shopkeeper=shopkeeper, store_title=store_title)
+    stable_inventory_dicts = [{"Item Name": item[0], "Item Price": item[1]} for item in stable_inventory]
 
-
+    return render_template('inventory.html', store_inventory=store_inventory_dicts, stable_inventory=stable_inventory_dicts, shopkeeper=shopkeeper, store_title=store_title)
 
 @app.route('/download')
 def download():

@@ -28,6 +28,24 @@
     </tbody>
 </table>
 <br>
+<h2>The Creature Stables</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Item Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in stable_inventory %}
+        <tr>
+            <td>{{ item['Item Name'] }}</td>
+            <td>{{ item['Item Price'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
 <body>
     <!-- Add a button to go back to the form -->
     <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Shop Creator</a>

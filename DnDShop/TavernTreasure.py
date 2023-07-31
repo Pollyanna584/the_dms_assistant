@@ -50,40 +50,31 @@ def apply_adjustment(price, price_adjustment_range):
     adjusted_price = price * (1 + price_adjustment / 100)
     return adjusted_price
 
-def generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_percent_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent):
-    total_items = len(df_summons_pets) + len(df_magical) + len(df_consumables)
+def generate_general_store(df_magical, df_consumables, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent):
+    total_items = len(df_magical) + len(df_consumables)
 
     # Calculate the number of items for each category based on percentage ranges
-    pet_percent = random.randint(*pet_percentage_range)
     magic_percent = random.randint(*magic_item_percentage_range)
     consumable_percent = random.randint(*consumable_percentage_range)
 
-    num_pet_items = round((pet_percent / 100) * total_items)
-    num_magic_items = round((magic_percent / 100) * total_items)
-    num_consumables = round((consumable_percent / 100) * total_items)
+    if magic_percent == 0:
+        num_magic_items = 0
+    else:
+        num_magic_items = round((magic_percent / 100) * total_items)
 
-    # Filter pets by rarity and calculated percentage
-    rarity_distribution = [num_pet_items // 5] * 5
-    remainder = num_pet_items % 5
-    for i in range(remainder):
-        rarity_distribution[i] += 1
+    if consumable_percent == 0:
+        num_consumables = 0
+    else:
+        num_consumables = round((consumable_percent / 100) * total_items)
 
-    pet_items = []
-    for rarity, count in zip(['Common', 'Uncommon', 'Rare', 'Very Rare', 'Legendary'], rarity_distribution):
-        items_of_rarity = df_summons_pets[df_summons_pets['Rarity'] == rarity]
-        if not items_of_rarity.empty:
-            sampled_items = items_of_rarity.sample(count, replace=True)
-            pet_items.extend(sampled_items)
-
-    # Concatenate pets and consumable items into one DataFrame
-    df_pet_consumables = pd.concat([pd.DataFrame(pet_items), df_consumables])
-
-    # Combine pets, magical, and consumable items into one DataFrame
-    all_items = pd.concat([df_pet_consumables, df_magical]).dropna(subset=['Name'])
+    # Check if there are any consumable items to add
+    all_items = df_consumables if num_consumables > 0 else pd.DataFrame()
+    if magic_percent > 0:  # Only include magical items if magic_percent > 0
+        all_items = pd.concat([all_items, df_magical]).dropna(subset=['Name'])
 
     # Generate the store inventory with random price adjustments
     num_items_in_shop = round(random.uniform(num_items_in_shop_low_percent, num_items_in_shop_high_percent) / 100 * total_items)
-    store_inventory = random.sample(list(all_items[['Name', 'Adjusted Price']].itertuples(index=False, name=None)), num_items_in_shop)
+    store_inventory = random.sample(list(all_items[['Name', 'Adjusted Price']].itertuples(index=False, name=None)), min(len(all_items), num_items_in_shop))
 
     for idx, item in enumerate(store_inventory, 1):
         name, price = item
@@ -91,6 +82,20 @@ def generate_general_store(df_summons_pets, df_magical, df_consumables, pet_perc
         store_inventory[idx - 1] = (name, formatted_price)
 
     return store_inventory
+
+def generate_creature_stables(df_summons_pets, price_adjustment_range, num_items_in_stables_range):
+    df_summons_pets = adjust_prices(df_summons_pets, price_adjustment_range)
+
+    num_items_in_stables = round(random.uniform(*num_items_in_stables_range) * len(df_summons_pets))
+    stable_inventory = random.sample(list(df_summons_pets[['Name', 'Adjusted Price']].itertuples(index=False, name=None)), min(len(df_summons_pets), num_items_in_stables))
+
+    for idx, item in enumerate(stable_inventory, 1):
+        name, price = item
+        formatted_price = format_price(price)
+        stable_inventory[idx - 1] = (name, formatted_price)
+
+    return stable_inventory
+
 
 data_dir = os.path.dirname(os.path.realpath(__file__))
 df_magical = pd.read_csv(f'{data_dir}/Items/magic_items.csv').dropna(subset=['Name'])
@@ -108,4 +113,4 @@ df_summons_pets = adjust_prices(df_summons_pets, price_adjustment_range)
 df_consumables = adjust_prices(df_consumables, price_adjustment_range)
 
 # Generate and print the store inventory
-store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
+# store_inventory = generate_general_store(df_summons_pets, df_magical, df_consumables, pet_percentage_range, magic_item_percentage_range, consumable_percentage_range, price_adjustment_range, num_items_in_shop_low_percent, num_items_in_shop_high_percent)
