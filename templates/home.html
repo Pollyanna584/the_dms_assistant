@@ -42,51 +42,115 @@
 
 <script type="text/javascript">
   function toggleMagic(isChecked) {
-    document.getElementById('magic_item_percentage_low').disabled = isChecked;
-    document.getElementById('magic_item_percentage_high').disabled = isChecked;
-    document.getElementById('magic_item_percentage_low').value = isChecked ? 0 : '';
-    document.getElementById('magic_item_percentage_high').value = isChecked ? 0 : '';
+    var magicLow = document.getElementById('magic_item_percentage_low');
+    var magicHigh = document.getElementById('magic_item_percentage_high');
+
+    if(isChecked) {
+        magicLow.setAttribute('data-original', magicLow.value);
+        magicHigh.setAttribute('data-original', magicHigh.value);
+        magicLow.value = 0;
+        magicHigh.value = 0;
+    } else {
+        magicLow.value = magicLow.getAttribute('data-original') || '';
+        magicHigh.value = magicHigh.getAttribute('data-original') || '';
+    }
+
+    magicLow.disabled = isChecked;
+    magicHigh.disabled = isChecked;
   }
 
   function toggleConsumable(isChecked) {
-    document.getElementById('consumable_percentage_low').disabled = isChecked;
-    document.getElementById('consumable_percentage_high').disabled = isChecked;
-    document.getElementById('consumable_percentage_low').value = isChecked ? 0 : '';
-    document.getElementById('consumable_percentage_high').value = isChecked ? 0 : '';
+    var consumableLow = document.getElementById('consumable_percentage_low');
+    var consumableHigh = document.getElementById('consumable_percentage_high');
+
+    if(isChecked) {
+        consumableLow.setAttribute('data-original', consumableLow.value);
+        consumableHigh.setAttribute('data-original', consumableHigh.value);
+        consumableLow.value = 0;
+        consumableHigh.value = 0;
+    } else {
+        consumableLow.value = consumableLow.getAttribute('data-original') || '';
+        consumableHigh.value = consumableHigh.getAttribute('data-original') || '';
+    }
+
+    consumableLow.disabled = isChecked;
+    consumableHigh.disabled = isChecked;
   }
 
   function togglePet(isChecked) {
-    document.getElementById('pet_percentage_low').disabled = isChecked;
-    document.getElementById('pet_percentage_high').disabled = isChecked;
-    document.getElementById('pet_percentage_low').value = isChecked ? 0 : '';
-    document.getElementById('pet_percentage_high').value = isChecked ? 0 : '';
+    var petLow = document.getElementById('pet_percentage_low');
+    var petHigh = document.getElementById('pet_percentage_high');
+
+    if(isChecked) {
+        petLow.setAttribute('data-original', petLow.value);
+        petHigh.setAttribute('data-original', petHigh.value);
+        petLow.value = 0;
+        petHigh.value = 0;
+    } else {
+        petLow.value = petLow.getAttribute('data-original') || '';
+        petHigh.value = petHigh.getAttribute('data-original') || '';
+    }
+
+    petLow.disabled = isChecked;
+    petHigh.disabled = isChecked;
   }
 
   document.getElementById('low-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "3"; 
-    document.getElementById('pet_percentage_high').value = "6"; 
-    document.getElementById('magic_item_percentage_low').value = "25"; 
-    document.getElementById('magic_item_percentage_high').value = "40";
-    document.getElementById('consumable_percentage_low').value = "20"; 
-    document.getElementById('consumable_percentage_high').value = "30";
+    if (!document.getElementById('pet_checkbox').checked) {
+        document.getElementById('pet_percentage_low').value = "3"; 
+        document.getElementById('pet_percentage_high').value = "6"; 
+    }
+
+    if (!document.getElementById('magic_checkbox').checked) {
+        document.getElementById('magic_item_percentage_low').value = "25"; 
+        document.getElementById('magic_item_percentage_high').value = "40";
+    }
+
+    if (!document.getElementById('consumable_checkbox').checked) {
+        document.getElementById('consumable_percentage_low').value = "20"; 
+        document.getElementById('consumable_percentage_high').value = "30";
+    }
+    document.getElementById('num_items_in_shop_low_percent').value = "5"; 
+    document.getElementById('num_items_in_shop_high_percent').value = "10";
   }
 
   document.getElementById('medium-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "5"; 
-    document.getElementById('pet_percentage_high').value = "8"; 
-    document.getElementById('magic_item_percentage_low').value = "35"; 
-    document.getElementById('magic_item_percentage_high').value = "50";
-    document.getElementById('consumable_percentage_low').value = "30"; 
-    document.getElementById('consumable_percentage_high').value = "40";
+    if (!document.getElementById('pet_checkbox').checked) {
+        document.getElementById('pet_percentage_low').value = "5"; 
+        document.getElementById('pet_percentage_high').value = "8"; 
+    }
+
+    if (!document.getElementById('magic_checkbox').checked) {
+        document.getElementById('magic_item_percentage_low').value = "35"; 
+        document.getElementById('magic_item_percentage_high').value = "50";
+    }
+
+    if (!document.getElementById('consumable_checkbox').checked) {
+        document.getElementById('consumable_percentage_low').value = "30"; 
+        document.getElementById('consumable_percentage_high').value = "40";
+    }
+    document.getElementById('num_items_in_shop_low_percent').value = "10"; 
+    document.getElementById('num_items_in_shop_high_percent').value = "15";
   }
 
   document.getElementById('high-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "7"; 
-    document.getElementById('pet_percentage_high').value = "10"; 
-    document.getElementById('magic_item_percentage_low').value = "45"; 
-    document.getElementById('magic_item_percentage_high').value = "60";
-    document.getElementById('consumable_percentage_low').value = "40"; 
-    document.getElementById('consumable_percentage_high').value = "50";
+    if (!document.getElementById('pet_checkbox').checked) {
+        document.getElementById('pet_percentage_low').value = "10"; 
+        document.getElementById('pet_percentage_high').value = "15"; 
+    }
+
+    if (!document.getElementById('magic_checkbox').checked) {
+        document.getElementById('magic_item_percentage_low').value = "45"; 
+        document.getElementById('magic_item_percentage_high').value = "60";
+    }
+
+    if (!document.getElementById('consumable_checkbox').checked) {
+        document.getElementById('consumable_percentage_low').value = "40"; 
+        document.getElementById('consumable_percentage_high').value = "50";
+    }
+    
+    document.getElementById('num_items_in_shop_low_percent').value = "15"; 
+    document.getElementById('num_items_in_shop_high_percent').value = "20";
   }
 </script>
 
