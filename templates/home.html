@@ -12,15 +12,19 @@
   <button type="button" id="medium-button">Medium</button>&nbsp;&nbsp;&nbsp;&nbsp;
   <button type="button" id="high-button">High</button> 
   <hr> 
-</body>
+
 <form method="POST">
   {{ form.hidden_tag() }}
   <fieldset>
       <legend>General Item Settings</legend>
+      <input type="checkbox" id="magic_checkbox" onchange="toggleMagic(this.checked)"> Exclude Magic Items<br>
       {{ form.magic_item_percentage_low.label }} {{ form.magic_item_percentage_low(id="magic_item_percentage_low", title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
       {{ form.magic_item_percentage_high.label }} {{ form.magic_item_percentage_high(id="magic_item_percentage_high", title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
+
+      <input type="checkbox" id="consumable_checkbox" onchange="toggleConsumable(this.checked)"> Exclude Consumables<br>
       {{ form.consumable_percentage_low.label }} {{ form.consumable_percentage_low(id="consumable_percentage_low", title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
       {{ form.consumable_percentage_high.label }} {{ form.consumable_percentage_high(id="consumable_percentage_high", title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
+
       {{ form.price_adjustment_low.label }} {{ form.price_adjustment_low(id="price_adjustment_low", title="The price adjustment's low percentage (-10 gives discount of up to 10%)") }}<br>
       {{ form.price_adjustment_high.label }} {{ form.price_adjustment_high(id="price_adjustment_high", title="The price adjustment's high percentage (10 gives upcharge up to 10%)") }}<br>
       {{ form.num_items_in_shop_low_percent.label }} {{ form.num_items_in_shop_low_percent(id="num_items_in_shop_low_percent", title="The minimum percentage of total items in the shop of 266 possible.") }}<br>
@@ -28,47 +32,63 @@
   </fieldset>
   <fieldset>
       <legend>Pet Settings</legend>
+      <input type="checkbox" id="pet_checkbox" onchange="togglePet(this.checked)"> Exclude Pets<br>
       {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(id="pet_percentage_low", title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
       {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(id="pet_percentage_high", title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
   </fieldset>
+  <input type="checkbox" id="common_checkbox"> Add common items (coming soon!)<br>
   {{ form.submit }}
 </form>
 
 <script type="text/javascript">
+  function toggleMagic(isChecked) {
+    document.getElementById('magic_item_percentage_low').disabled = isChecked;
+    document.getElementById('magic_item_percentage_high').disabled = isChecked;
+    document.getElementById('magic_item_percentage_low').value = isChecked ? 0 : '';
+    document.getElementById('magic_item_percentage_high').value = isChecked ? 0 : '';
+  }
+
+  function toggleConsumable(isChecked) {
+    document.getElementById('consumable_percentage_low').disabled = isChecked;
+    document.getElementById('consumable_percentage_high').disabled = isChecked;
+    document.getElementById('consumable_percentage_low').value = isChecked ? 0 : '';
+    document.getElementById('consumable_percentage_high').value = isChecked ? 0 : '';
+  }
+
+  function togglePet(isChecked) {
+    document.getElementById('pet_percentage_low').disabled = isChecked;
+    document.getElementById('pet_percentage_high').disabled = isChecked;
+    document.getElementById('pet_percentage_low').value = isChecked ? 0 : '';
+    document.getElementById('pet_percentage_high').value = isChecked ? 0 : '';
+  }
+
   document.getElementById('low-button').onclick = function() {
     document.getElementById('pet_percentage_low').value = "3"; 
     document.getElementById('pet_percentage_high').value = "6"; 
-    document.getElementById('magic_item_percentage_low').value = "3";
-    document.getElementById('magic_item_percentage_high').value = "6";
-    document.getElementById('consumable_percentage_low').value = "15";
-    document.getElementById('consumable_percentage_high').value = "20";
-    document.getElementById('num_items_in_shop_low_percent').value = "5";
-    document.getElementById('num_items_in_shop_high_percent').value = "10";
-  };
-</script>
-
-<script type="text/javascript">
-  document.getElementById('medium-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "6"; 
-    document.getElementById('pet_percentage_high').value = "12"; 
-    document.getElementById('magic_item_percentage_low').value = "5";
-    document.getElementById('magic_item_percentage_high').value = "10";
-    document.getElementById('consumable_percentage_low').value = "20";
+    document.getElementById('magic_item_percentage_low').value = "25"; 
+    document.getElementById('magic_item_percentage_high').value = "40";
+    document.getElementById('consumable_percentage_low').value = "20"; 
     document.getElementById('consumable_percentage_high').value = "30";
-    document.getElementById('num_items_in_shop_low_percent').value = "10";
-    document.getElementById('num_items_in_shop_high_percent').value = "20";
-  };
+  }
+
+  document.getElementById('medium-button').onclick = function() {
+    document.getElementById('pet_percentage_low').value = "5"; 
+    document.getElementById('pet_percentage_high').value = "8"; 
+    document.getElementById('magic_item_percentage_low').value = "35"; 
+    document.getElementById('magic_item_percentage_high').value = "50";
+    document.getElementById('consumable_percentage_low').value = "30"; 
+    document.getElementById('consumable_percentage_high').value = "40";
+  }
+
+  document.getElementById('high-button').onclick = function() {
+    document.getElementById('pet_percentage_low').value = "7"; 
+    document.getElementById('pet_percentage_high').value = "10"; 
+    document.getElementById('magic_item_percentage_low').value = "45"; 
+    document.getElementById('magic_item_percentage_high').value = "60";
+    document.getElementById('consumable_percentage_low').value = "40"; 
+    document.getElementById('consumable_percentage_high').value = "50";
+  }
 </script>
 
-<script type="text/javascript">
-  document.getElementById('high-button').onclick = function() {
-    document.getElementById('pet_percentage_low').value = "10"; 
-    document.getElementById('pet_percentage_high').value = "20"; 
-    document.getElementById('magic_item_percentage_low').value = "15";
-    document.getElementById('magic_item_percentage_high').value = "30";
-    document.getElementById('consumable_percentage_low').value = "30";
-    document.getElementById('consumable_percentage_high').value = "40";
-    document.getElementById('num_items_in_shop_low_percent').value = "20";
-    document.getElementById('num_items_in_shop_high_percent').value = "30";
-  };
-</script>
+</body>
+</html>
