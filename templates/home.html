@@ -16,31 +16,74 @@
 <form method="POST">
   {{ form.hidden_tag() }}
   <fieldset>
-      <legend>General Item Settings</legend>
+      <legend>Magic Item Settings</legend>
       <input type="checkbox" id="magic_checkbox" onchange="toggleMagic(this.checked)"> Exclude Magic Items<br>
       {{ form.magic_item_percentage_low.label }} {{ form.magic_item_percentage_low(id="magic_item_percentage_low", title="The minimum percentage of magic items in the shop inventory of 152 possible.") }}<br>
       {{ form.magic_item_percentage_high.label }} {{ form.magic_item_percentage_high(id="magic_item_percentage_high", title="The maximum percentage of magic items in the shop inventory of 152 possible.") }}<br>
-
+  </fieldset>
+  <fieldset>
+    <legend>Potions and Scrolls Settings</legend>
       <input type="checkbox" id="consumable_checkbox" onchange="toggleConsumable(this.checked)"> Exclude Consumables<br>
       {{ form.consumable_percentage_low.label }} {{ form.consumable_percentage_low(id="consumable_percentage_low", title="The minimum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
       {{ form.consumable_percentage_high.label }} {{ form.consumable_percentage_high(id="consumable_percentage_high", title="The maximum percentage of scrolls and potions in the shop inventory of 100 possible.") }}<br>
-
+  </fieldset>
+  <fieldset>
+    <legend>Pet and Summons Settings</legend>
+    <input type="checkbox" id="pet_checkbox" onchange="togglePet(this.checked)"> Exclude Pets and Summons<br>
+    {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(id="pet_percentage_low", title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+    {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(id="pet_percentage_high", title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
+</fieldset>
+  <fieldset>
+    <legend>Discount and Store Inventory Settings</legend>
       {{ form.price_adjustment_low.label }} {{ form.price_adjustment_low(id="price_adjustment_low", title="The price adjustment's low percentage (-10 gives discount of up to 10%)") }}<br>
       {{ form.price_adjustment_high.label }} {{ form.price_adjustment_high(id="price_adjustment_high", title="The price adjustment's high percentage (10 gives upcharge up to 10%)") }}<br>
       {{ form.num_items_in_shop_low_percent.label }} {{ form.num_items_in_shop_low_percent(id="num_items_in_shop_low_percent", title="The minimum percentage of total items in the shop of 266 possible.") }}<br>
       {{ form.num_items_in_shop_high_percent.label }} {{ form.num_items_in_shop_high_percent(id="num_items_in_shop_high_percent", title="The maximum percentage of total items in the shop of 266 possible.") }}<br>
-  </fieldset>
-  <fieldset>
-      <legend>Pet Settings</legend>
-      <input type="checkbox" id="pet_checkbox" onchange="togglePet(this.checked)"> Exclude Pets<br>
-      {{ form.pet_percentage_low.label }} {{ form.pet_percentage_low(id="pet_percentage_low", title="The minimum percentage of pet items in the shop inventory of 14 possible.") }}<br>
-      {{ form.pet_percentage_high.label }} {{ form.pet_percentage_high(id="pet_percentage_high", title="The maximum percentage of pet items in the shop inventory of 14 possible.") }}<br>
   </fieldset>
   <input type="checkbox" id="common_checkbox"> Add common items (coming soon!)<br>
   {{ form.submit }}
 </form>
 
 <script type="text/javascript">
+  // Attach onchange event to the magic item textboxes
+  document.getElementById('magic_item_percentage_low').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('magic_checkbox').checked = false;
+    }
+  }
+
+  document.getElementById('magic_item_percentage_high').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('magic_checkbox').checked = false;
+    }
+  }
+
+  // Attach onchange event to the consumable textboxes
+  document.getElementById('consumable_percentage_low').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('consumable_checkbox').checked = false;
+    }
+  }
+
+  document.getElementById('consumable_percentage_high').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('consumable_checkbox').checked = false;
+    }
+  }
+
+  // Attach onchange event to the pet textboxes
+  document.getElementById('pet_percentage_low').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('pet_checkbox').checked = false;
+    }
+  }
+
+  document.getElementById('pet_percentage_high').onchange = function() {
+    if (this.value != 0) {
+      document.getElementById('pet_checkbox').checked = false;
+    }
+  }
+
   function toggleMagic(isChecked) {
     var magicLow = document.getElementById('magic_item_percentage_low');
     var magicHigh = document.getElementById('magic_item_percentage_high');
@@ -55,8 +98,8 @@
         magicHigh.value = magicHigh.getAttribute('data-original') || '';
     }
 
-    magicLow.disabled = isChecked;
-    magicHigh.disabled = isChecked;
+    magicLow.readonly = isChecked;
+    magicHigh.readonly = isChecked;
   }
 
   function toggleConsumable(isChecked) {
@@ -73,8 +116,8 @@
         consumableHigh.value = consumableHigh.getAttribute('data-original') || '';
     }
 
-    consumableLow.disabled = isChecked;
-    consumableHigh.disabled = isChecked;
+    consumableLow.readonly = isChecked;
+    consumableHigh.readonly = isChecked;
   }
 
   function togglePet(isChecked) {
@@ -91,8 +134,8 @@
         petHigh.value = petHigh.getAttribute('data-original') || '';
     }
 
-    petLow.disabled = isChecked;
-    petHigh.disabled = isChecked;
+    petLow.readonly = isChecked;
+    petHigh.readonly = isChecked;
   }
 
   document.getElementById('low-button').onclick = function() {

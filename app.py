@@ -10,10 +10,14 @@ import io
 import random
 from name_generator import NameGenerator #Shop Name Generator
 from Shopkeeper.shopkeeper_name import ShopkeeperGenerator
+from dotenv import load_dotenv
+
+# Load the .env file
+load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'PoXu9hYm6W96vrtEkomwX4fjAJVMteEi'  # you should use a real, secret key here
+app.config['SECRET_KEY'] = os.getenv('DM_SECRET_KEY')  # you should use a real, secret key here
 
 class StoreForm(FlaskForm):
     pet_percentage_low = FloatField('Pet Percentage - Low:', validators=[InputRequired()], default=6)
